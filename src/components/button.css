@@ -1,0 +1,32 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px; /* h-11 in Tailwind */
+    padding: 0 28px; /* px-7 in Tailwind */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    background: transparent;
+    color: #ffffff; /* Default text color */
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    color: #b026ff; /* hover:text-color-1 */
+  }
+  
+  .button span {
+    position: relative;
+    z-index: 10; /* Ensures text appears above the SVG */
+  }
+  
+  
+  .button.white {
+    color: #000000; /* text-n-8 in Tailwind */
+  }
+  
