@@ -37,7 +37,7 @@ function Header() {
           <img src={brainwave} width={190} height={50} />
         </a>
         <nav className={` fixed top-[5rem] left-0 right-0 bottom-0 bg-[#0E0C15] lg:static lg:flex lg:mx-auto lg:bg-transparent ${openNavigation ? "flex" : "hidden"}`}>
-          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row ">
+          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row  ">
             {navigation.map((item, index) => (
               <a
                 key={item.id}
