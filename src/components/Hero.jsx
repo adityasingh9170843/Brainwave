@@ -2,19 +2,30 @@ import React from "react";
 import Section from "./Section";
 import { curve, heroBackground, robot } from "../assets";
 import Button from "./Button";
+import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
+import { heroIcons } from "../constants";
+import { ScrollParallax } from "react-just-parallax";
+import { useRef } from "react";
+import Generating from "./Generating";
+import Notification from "./Notification";
+import CompanyLogo from "./CompanyLogo";
 function Hero() {
+  const parallaxRef = useRef(null);
   return (
     <Section
-      className="pt-[3rem] -mt-[5.25rem] "
+      className="pt-[5rem] -mt-[5.rem]  "
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       customPaddings
       id="hero"
     >
-      <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] relative">
+      <div
+        className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] relative"
+        ref={parallaxRef}
+      >
         <div className="relative z-1 max-w-[62rem] mx-[auto] text-center mb-[4rem] md:mb-20 lg:mb:[6rem] lg:text-center">
           <h1 className="font-semibold text-[2.5rem] leading-[3.25rem] md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem] text-4xl mb-6">
-            Explore the Possibilites of AI chatting with BrainwaveCurve
+            Explore the Possibilites of&nbsp;AI chatting with BrainwaveCurve
             <span className="inline-block relative">
               Brainwave{" "}
               <img
@@ -46,8 +57,27 @@ function Hero() {
                   width={1024}
                   height={490}
                 />
+                <Generating
+                  className={`absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2`}
+                />
+                <ScrollParallax isAbsolutelyPositioned>
+                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-[#474060]/40 backdrop-blur border border-[#FFFFFF]/10 rounded-2xl xl:flex">
+                    {heroIcons.map((icon, index) => (
+                      <li className="p-5" key={index}>
+                        <img src={icon} width={24} height={25} alt={icon} />
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollParallax>
+                <ScrollParallax isAbsolutelyPositioned>
+                  <Notification
+                    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
+                    title="code Generation"
+                  />
+                </ScrollParallax>
               </div>
             </div>
+            <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[240%] -translate-x-1/2 md:-top-[46%] md:w-[138%]  lg:-top-[104%]">
             <img
@@ -58,8 +88,11 @@ function Hero() {
               alt="hero"
             />
           </div>
+          <BackgroundCircles />
         </div>
+        <CompanyLogo className="hidden relative z-10 mt-20 lg:block"/>
       </div>
+      
     </Section>
   );
 }
