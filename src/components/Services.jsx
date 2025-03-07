@@ -3,6 +3,7 @@ import Section from "./Section";
 import Heading from "./Heading";
 import { check, service1 } from "../assets";
 import {brainwaveServices,brainwaveServicesIcons} from "../constants";
+import Generating from "./Generating";
 function Services() {
   return (
     <Section id="how-to-use">
@@ -34,6 +35,7 @@ function Services() {
                     ))}
                 </ul>
             </div>
+            <Generating className={"absolute left-4 right-4 bottom-4 border-[#FFFFFF]/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2 "}/>
           </div>
         </div>
       </div>
