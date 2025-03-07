@@ -37,7 +37,7 @@ function Benefits() {
               </div>
               {item.light && <GradientLight/>}
 
-              <div className="absolute inset-0.5 b-n-8" style={{clipPath:"url(#benefits)" }}>
+              <div className="absolute inset-0.5 bg-[#0E0C15]" style={{clipPath:"url(#benefits)" }}>
                 <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-out hover:opacity-10">
                   {item.imageUrl && (
                     <img
